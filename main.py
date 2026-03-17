@@ -1,4 +1,4 @@
-from processo import processar_alunos
+from processos import melhor_aluno, processar_alunos
 
 
 
@@ -12,10 +12,35 @@ alunos = [
 
 resultados = processar_alunos(alunos)
 
-for nome, notas, media, situacao in resultados:
-    print(f"Aluno: {nome}")
-    print(f"Notas: {notas}")
-    print(f"Média: {media}")
-    print(f"Situação: {situacao}")
-    print("-" * 20)
+    
+with open("resultados.txt", "w", encoding="utf-8") as arquivo:
+
+    for nome, notas, media, situacao in resultados:
+        linha = (
+            f"Aluno: {nome}\n"
+            f"Notas: {notas}\n"
+            f"Média: {media}\n"
+            f"Situação: {situacao}\n"
+            + "-" * 30 + "\n"
+            )
+
+        print(linha)          
+        arquivo.write(linha)  
+
+        
+    melhor = melhor_aluno(resultados)
+
+    if melhor:
+        nome, notas, media, situacao = melhor
+        texto = (
+            "\nMelhor aluno:\n"
+            f"Nome: {nome}\n"
+            f"Média: {media}\n"
+            )
+    else:
+        texto = "\nNenhum aluno válido encontrado.\n"
+
+    print(texto)
+    arquivo.write(texto)
+
 

@@ -36,3 +36,14 @@ def processar_alunos(lista):
         resultado.append((nome, notas, media, situacao))
 
     return resultado
+
+
+def melhor_aluno(resultados):
+    melhor = None
+
+    for nome, notas, media, situacao in resultados:
+        if media is not None:
+            if melhor is None or media > melhor[2]:
+                melhor = (nome, notas, media, situacao)
+
+    return melhor
