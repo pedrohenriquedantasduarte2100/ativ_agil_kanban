@@ -19,5 +19,3 @@ for nome, notas, media, situacao in resultados:
     print(f"Situação: {situacao}")
     print("-" * 20)
 
-
-
