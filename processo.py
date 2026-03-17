@@ -8,6 +8,7 @@ def validar_notas(notas):
 
     return True
 
+
 def calcular_media(notas):
     if not validar_notas(notas):
         return None
@@ -17,3 +18,21 @@ def calcular_media(notas):
         soma += n
 
     return soma / len(notas)
+
+
+def processar_alunos(lista):
+    resultado = []
+
+    for nome, notas in lista:
+        media = calcular_media(notas)
+
+        if media is None:
+            situacao = "Inválido"
+        elif media < 7:
+            situacao = "Recuperação"
+        else:
+            situacao = "Aprovado"
+
+        resultado.append((nome, notas, media, situacao))
+
+    return resultado

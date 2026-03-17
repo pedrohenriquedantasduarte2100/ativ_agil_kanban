@@ -1,4 +1,6 @@
-from processo import validar_notas
+from processo import processar_alunos
+
+
 
 alunos = [
     ("Ana", [8, 7.5, 9]),
@@ -7,10 +9,13 @@ alunos = [
     ("Diana", []),
     ("Eduardo", [7, "a", 8])
     ]
-for aluno in alunos:
-    nome, notas = aluno
-    print(f"Validando notas de {nome}...")
-    if validar_notas(notas):
-        print(f"As notas de {nome} são válidas.")
-    else:
-        print(f"As notas de {nome} são inválidas.")
+
+resultados = processar_alunos(alunos)
+
+for nome, notas, media, situacao in resultados:
+    print(f"Aluno: {nome}")
+    print(f"Notas: {notas}")
+    print(f"Média: {media}")
+    print(f"Situação: {situacao}")
+    print("-" * 20)
+
