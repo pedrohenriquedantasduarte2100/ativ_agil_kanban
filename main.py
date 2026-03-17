@@ -1,4 +1,4 @@
-from processo import calcular_media
+from processo import validar_notas
 
 alunos = [
     ("Ana", [8, 7.5, 9]),
@@ -7,11 +7,10 @@ alunos = [
     ("Diana", []),
     ("Eduardo", [7, "a", 8])
     ]
-for nome, notas in alunos:
-    media = calcular_media(notas)
-    if media is not None:
-        print(f"A média de {nome} é {media:.2f}")
+for aluno in alunos:
+    nome, notas = aluno
+    print(f"Validando notas de {nome}...")
+    if validar_notas(notas):
+        print(f"As notas de {nome} são válidas.")
     else:
-        print(f"Não foi possível calcular a média de {nome} devido a notas inválidas.")
-
-
+        print(f"As notas de {nome} são inválidas.")
