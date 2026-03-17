@@ -7,3 +7,13 @@ def validar_notas(notas):
             return False
 
     return True
+
+def calcular_media(notas):
+    if not validar_notas(notas):
+        return None
+
+    soma = 0
+    for n in notas:
+        soma += n
+
+    return soma / len(notas)
