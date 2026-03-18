@@ -77,4 +77,5 @@ Os alunos com maiores médias devem ser destacados no relatório.
 
 Todas as informações devem ser registradas no relatório final.
 -------------------
+# Kanban e empatia
 https://miro.com/app/board/uXjVGw31tQU=/?share_link_id=179015051442
